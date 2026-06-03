@@ -4,7 +4,7 @@ export async function sendMessageToAzure(
 ) {
   try {
     const response = await fetch(
-      "http://localhost:5000/api/chat",
+      "https://sport-store-backend-7s42.onrender.com/api/chat",
       {
         method: "POST",
         headers: {
@@ -25,7 +25,11 @@ export async function sendMessageToAzure(
   };
 
   } catch (error) {
-    console.error(error);
-    return "Error al conectar con SportBot.";
+  console.error(error);
+
+  return {
+    reply: "Error al conectar con SportBot.",
+    products: []
+  };
   }
 }
