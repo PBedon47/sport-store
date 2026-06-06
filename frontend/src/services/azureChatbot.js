@@ -20,7 +20,7 @@ export async function sendMessageToAzure(
     const data = await response.json();
 
     return {
-    reply: data.reply,
+    reply: data.reply || "Disculpa, no pude generar una respuesta.",
     products: data.products || []
   };
 

@@ -18,6 +18,7 @@ const SUGGESTIONS = [
 ];
 
 function formatText(text) {
+  if (!text) return '' 
   return text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\n{3,}/g, '\n\n')                          // máx 2 saltos seguidos
